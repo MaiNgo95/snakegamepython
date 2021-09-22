@@ -1,0 +1,48 @@
+from turtle import Screen
+from snake import Snake
+import time
+
+screen = Screen()
+screen.setup(width=600, height=600)
+screen.bgcolor("black")
+screen.title("snake")
+screen.tracer(0) #use to make the segments of snake not flicking
+
+
+'''turtle= Turtle("square")
+
+turtle.color("white")
+
+turtle_2= Turtle("square")
+turtle_2.color("white")
+turtle_2.goto(-20,0)
+turtle_3= Turtle("square")
+turtle_3.color("white")
+turtle_3.goto(-40,0) ***/'''
+
+snake = Snake()
+#replace the snake segment
+
+
+screen.listen()
+
+screen.onkey(snake.up, "UP")
+screen.onkey(snake.down, "DOWN")
+screen.onkey(snake.left, "LEFT")
+screen.onkey(snake.right, "RIGHT")
+
+
+gameison = True
+
+while gameison:
+    screen.update()
+    time.sleep(0.1)  #make the snake move slower
+    
+    snake.move()
+
+
+
+
+
+
+screen.exitonclick()
